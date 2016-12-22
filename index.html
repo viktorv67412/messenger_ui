@@ -8,18 +8,27 @@
 </head>
 <body>
 
-	
-	<script type="text/template" id="person_template">
+	<p>login</p>	
+	<input name="login" type="text" id="login" size="20">
+	<p>password</p>	
+	<input name="password" type="text" id="password" size="20">
+	<p>realName</p>	
+	<input name="realName" type="text" id="realName" size="20">
+	<p>phoneNumber</p>	
+	<input name="phoneNumber" type="text" id="phoneNumber" size="20">
+	<p>email</p>	
+	<input name="email" type="text" id="email" size="20">
+
+	<p><button class="button" id="button_id">register</button></p>
+
+	<script type="text/template" id="person_template">	
 		<%= login %> , <%= password %> , <%= realName %> , <%= phoneNumber %> , <%= email %>
 	</script>
-	
 
 	<script type="text/javascript" src="js/lib/jquery-3.1.1.js"></script>
 	<script type="text/javascript" src="js/lib/underscore.js"></script>
 	<script type="text/javascript" src="js/lib/backbone.js"></script>
 	<script type="text/javascript" src="js/models/person_model.js"></script>
-	<script type="text/javascript" src="js/collections/people.js"></script>
 	<script type="text/javascript" src="js/views/person_view.js"></script>
 </body>
-
 </html>

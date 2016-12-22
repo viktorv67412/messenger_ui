@@ -1,34 +1,42 @@
 
 var person = new Person();
 
-var PeopleView = Backbone.View.extend({
-	tagName: 'ul',
+function doView(peopleCollection){
 
-	initialize: function() {
-		this.render();
-	},
+	var PeopleView = Backbone.View.extend({
 
-	render: function(){
-		this.collection.each(function(person) {
-			var personView = new PersonView({model: person});
-			this.$el.append(personView.$el)
-		}, this);
-		return this;
-	}
-});
+		initialize: function() {
+			this.render();
+		},
 
-var PersonView = Backbone.View.extend({
-	initialize: function() {
-		this.render();
-	},
-	
-	template: _.template($('#person_template').html()),
+		render: function(){
+			this.collection.each(function(person) {
+				var personView = new PersonView({model: person});
+				this.$el.append(personView.$el)
+			}, this);
+			return this;
+		}
+	});
 
-	render: function(){
-		this.$el.html(this.template(this.model.toJSON()));
-		return this;
-	}
-});
+	var PersonView = Backbone.View.extend({
 
-var peopleView = new PeopleView({collection: peopleModel});
-$(document.body).append(peopleView.$el);
+		initialize: function() {
+			this.render();
+		},
+
+		template: _.template($('#person_template').html()),
+
+		render: function(){
+			this.$el.html(this.template(this.model.toJSON()));
+			return this;
+		}
+	});
+
+	var peopleView = new PeopleView({collection: peopleCollection});
+	$(document.body).append(peopleView.$el);
+}
+
+
+
+
+

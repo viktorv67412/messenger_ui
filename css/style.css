@@ -2,4 +2,15 @@ body{
 	margin: 0;
 	background: #16DB8B;
 	text-align: center;
+	padding-top: 40px;
+}
+.test{
+	color: red;
+}
+p{
+	margin: 5px;
+}
+
+.btn{
+	margin: 20px;
 }
